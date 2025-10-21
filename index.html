@@ -1,1 +1,53 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>لعبة النيون - Football Picker</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1 class="neon-title">Neon Football Picker</h1>
+      <div class="teams-row" id="teamsRow">
+        <!-- لوجوه الفرق (نص + يمكنك استبداله بصور) -->
+        <div class="team" data-team="Liverpool">Liverpool</div>
+        <div class="team" data-team="Barsenila">Barsenila</div>
+        <div class="team" data-team="Arsenal">Arsenal</div>
+        <div class="team" data-team="Manchester City">Manchester City</div>
+        <div class="team" data-team="Real Madrid">Real Madrid</div>
+        <div class="team" data-team="PSG">PSG</div>
+      </div>
+    </header>
 
+    <main>
+      <div class="top-selected">
+        <div id="selectedLogo" class="selected-logo">— اختر فريق —</div>
+        <div id="selectedPosition" class="selected-position">Position: —</div>
+      </div>
+
+      <div class="circle-wrap">
+        <div class="outer-circle">
+          <div class="inner-circle" id="innerCircle">
+            <span id="cyclingLetter">A</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="neon-btn">Start</button>
+        <div id="timer" class="timer">15</div>
+      </div>
+
+      <div id="result" class="result">اللاعب: —</div>
+    </main>
+
+    <footer>
+      <small class="note">قائمة اللاعبين أمثلة قابلة للتعديل داخل Script.js</small>
+    </footer>
+  </div>
+
+  <script src="Script.js"></script>
+</body>
+  </html>
