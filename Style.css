@@ -1,1 +1,171 @@
+/* Style.css - تصميم نيون */
+:root{
+  --bg:#030314;
+  --neon:#00f0ff;
+  --accent:#ff2bd6;
+  --glass: rgba(255,255,255,0.03);
+  --card: rgba(255,255,255,0.02);
+}
 
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: 'Segoe UI', Tahoma, sans-serif;direction:rtl}
+body{
+  background: radial-gradient(circle at 10% 10%, #07102a 0%, var(--bg) 40%);
+  color:#e6f7ff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.app{
+  width:100%;
+  max-width:820px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  border:1px solid rgba(0,255,255,0.06);
+}
+
+/* العنوان النيون */
+.neon-title{
+  text-align:center;
+  margin:6px 0 12px 0;
+  font-size:24px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--neon);
+  text-shadow:
+    0 0 6px rgba(0,240,255,0.6),
+    0 0 18px rgba(0,240,255,0.25),
+    0 6px 20px rgba(0,0,0,0.6);
+}
+
+/* صف الفرق */
+.teams-row{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+.team{
+  padding:8px 10px;
+  border-radius:10px;
+  background:var(--glass);
+  cursor:pointer;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+  transition:transform .15s, box-shadow .15s;
+  color:#bfefff;
+  font-weight:600;
+  font-size:14px;
+}
+.team:hover{transform:translateY(-4px); box-shadow:0 12px 28px rgba(0,0,0,0.6)}
+.team.active{
+  background:linear-gradient(135deg, rgba(0,240,255,0.06), rgba(255,43,214,0.03));
+  color:#ffffff;
+  border:1px solid rgba(0,240,255,0.25);
+  text-shadow:0 0 6px rgba(0,240,255,0.3);
+}
+
+/* الجزء العلوي المختار */
+.top-selected{
+  text-align:center;
+  margin:8px 0 18px 0;
+}
+.selected-logo{
+  font-size:20px;
+  font-weight:700;
+  padding:6px 12px;
+  display:inline-block;
+  border-radius:10px;
+  background:var(--card);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  border:1px solid rgba(0,0,0,0.3);
+  color:var(--neon);
+  text-shadow:0 0 6px rgba(0,240,255,0.25);
+}
+.selected-position{
+  margin-top:8px;
+  font-size:14px;
+  color:#cfefff;
+}
+
+/* الدائرة الداخلية والخارجية */
+.circle-wrap{display:flex;justify-content:center;margin:18px 0}
+.outer-circle{
+  width:240px;
+  height:240px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:conic-gradient(from 90deg, rgba(0,240,255,0.06), rgba(255,43,214,0.04));
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6), inset 0 0 40px rgba(0,240,255,0.03);
+  border:2px solid rgba(0,255,255,0.06);
+  padding:18px;
+}
+.inner-circle{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  background:linear-gradient(180deg, rgba(0,0,0,0.35), rgba(255,255,255,0.01));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6), inset 0 0 26px rgba(0,240,255,0.06);
+  border:2px solid rgba(0,240,255,0.08);
+}
+#cyclingLetter{
+  font-size:46px;
+  font-weight:900;
+  letter-spacing:6px;
+  color:var(--accent);
+  text-shadow:
+    0 0 8px rgba(255,43,214,0.45),
+    0 2px 20px rgba(0,0,0,0.6);
+}
+
+/* الأزرار وعداد الوقت */
+.controls{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px}
+.neon-btn{
+  background:transparent;
+  border:2px solid rgba(0,240,255,0.18);
+  padding:12px 22px;
+  font-size:16px;
+  border-radius:12px;
+  cursor:pointer;
+  color:var(--neon);
+  text-transform:uppercase;
+  box-shadow: 0 6px 18px rgba(0,240,255,0.06);
+  transition:transform .12s, box-shadow .12s;
+}
+.neon-btn:hover{transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,240,255,0.08)}
+.timer{
+  font-size:20px;
+  min-width:56px;
+  text-align:center;
+  padding:8px 10px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.25);
+  border:1px solid rgba(255,255,255,0.02);
+  color:#ffffc8;
+}
+
+/* النتيجة */
+.result{
+  margin-top:18px;
+  text-align:center;
+  font-size:18px;
+  font-weight:700;
+  color:#dfffe6;
+  padding:10px;
+  border-radius:10px;
+  background:rgba(0,0,0,0.22);
+  border:1px solid rgba(0,0,0,0.25);
+}
+
+/* تلميح */
+.note{display:block;text-align:center;color:#9fb8c9;margin-top:12px;font-size:12px}
