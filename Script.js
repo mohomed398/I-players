@@ -154,18 +154,26 @@ function startCountdown(seconds, team, position){
 /* اظهار اللاعب المناسب بعد انتهاء الوقت */
 function revealPlayer(team, position){
   const teamInfo = teamsData[team];
-  if(!teamInfo){ resultEl.textContent = `اللاعب: غير متوفر`; return; }
+  if(!teamInfo){ 
+    resultEl.textContent = `اللاعب: غير متوفر`; 
+    return; 
+  }
+
   const players = teamInfo.players[position] || [];
   if(players.length === 0){
     resultEl.textContent = `اللاعب: لا يوجد لاعب معرف لهذا المنصب (${position})`;
+    return;
+  }
+
+  // نجلب الحرف الظاهر في الدائرة
+  const letter = innerLetter.textContent.toUpperCase();
+
+  // نحاول إيجاد لاعب يبدأ بنفس الحرف
+  const filtered = players.filter(p => p.toUpperCase().startsWith(letter));
+  if(filtered.length > 0){
+    const chosen = filtered[Math.floor(Math.random() * filtered.length)];
+    resultEl.textContent = `اللاعب: ${chosen} — (${position})`;
   } else {
-    const chosen = players[Math.floor(Math.random()*players.length)];
-    resultEl.textContent = `اللاعب: ${chosen}  —  (${position})`;
+    resultEl.textContent = `لا يوجد لاعب يبدأ بالحرف ${letter}`;
   }
 }
-
-/* تنظيف عند الخروج أو إعادة التشغيل */
-window.addEventListener('beforeunload', ()=>{
-  if(letterInterval) clearInterval(letterInterval);
-  if(countdownInterval) clearInterval(countdownInterval);
-});
